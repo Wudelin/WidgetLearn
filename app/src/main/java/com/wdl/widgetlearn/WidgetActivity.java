@@ -39,7 +39,8 @@ public class WidgetActivity extends AppCompatActivity
             "RemoteViews-notify",
             "RemoteViews-appwidget",
             "PreferenceFragment",
-            "ExpandableList"
+            "ExpandableList",
+            "PopMenu"
     };
 
     @Override
@@ -90,6 +91,9 @@ public class WidgetActivity extends AppCompatActivity
                 } else if (position == 5)
                 {
                     ExpandableListActivity.show(WidgetActivity.this);
+                } else if (position == 6)
+                {
+                    PopMenuActivity.show(WidgetActivity.this);
                 }
             }
         });

@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">WidgetLearn</string>
+    <string name="next">下一首播放</string>
+    <string name="add">添加到歌单</string>
+    <string name="add_queue">添加到播放队列</string>
 </resources>
