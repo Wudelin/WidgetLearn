@@ -1,4 +1,4 @@
-package com.wdl.widgetlearn;
+package com.wdl.widgetlearn.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuPopupHelper;
@@ -14,6 +14,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.wdl.widgetlearn.R;
+
 import java.lang.reflect.Field;
 
 public class PopMenuActivity extends AppCompatActivity
@@ -21,6 +23,7 @@ public class PopMenuActivity extends AppCompatActivity
     private static final String TAG = "PopMenuActivity";
 
     private Button button;
+
 
     public static void show(Context context)
     {
@@ -42,6 +45,7 @@ public class PopMenuActivity extends AppCompatActivity
                 return false;
             }
         });
+
     }
 
     /**

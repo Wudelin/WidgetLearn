@@ -1,4 +1,4 @@
-package com.wdl.widgetlearn;
+package com.wdl.widgetlearn.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.SimpleAdapter;
 import android.widget.StackView;
+
+import com.wdl.widgetlearn.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

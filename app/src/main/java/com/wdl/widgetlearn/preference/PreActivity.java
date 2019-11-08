@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.wdl.widgetlearn.R;
-import com.wdl.widgetlearn.StackViewActivity;
 
 public class PreActivity extends AppCompatActivity
 {

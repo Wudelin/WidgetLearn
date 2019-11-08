@@ -1,4 +1,4 @@
-package com.wdl.widgetlearn;
+package com.wdl.widgetlearn.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ExpandableListView;
 
+import com.wdl.widgetlearn.R;
 import com.wdl.widgetlearn.adapter.ExpandAdapter;
 import com.wdl.widgetlearn.bean.ExpandableData;
 

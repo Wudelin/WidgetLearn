@@ -13,14 +13,17 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ExpandableListView;
 import android.widget.ListView;
 import android.widget.RemoteViews;
 import android.widget.SimpleAdapter;
 
-import com.wdl.widgetlearn.preference.MyPreferenceFragment;
 import com.wdl.widgetlearn.preference.PreActivity;
 import com.wdl.widgetlearn.remoteviews.NotifyActivity;
+import com.wdl.widgetlearn.ui.ExpandableListActivity;
+import com.wdl.widgetlearn.ui.PopMenuActivity;
+import com.wdl.widgetlearn.ui.ProgressBarActivity;
+import com.wdl.widgetlearn.ui.StackViewActivity;
+import com.wdl.widgetlearn.ui.ViewFlipperActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,7 +43,8 @@ public class WidgetActivity extends AppCompatActivity
             "RemoteViews-appwidget",
             "PreferenceFragment",
             "ExpandableList",
-            "PopMenu"
+            "PopMenu",
+            "ProgressBar"
     };
 
     @Override
@@ -94,6 +98,9 @@ public class WidgetActivity extends AppCompatActivity
                 } else if (position == 6)
                 {
                     PopMenuActivity.show(WidgetActivity.this);
+                } else if (position == 7)
+                {
+                    ProgressBarActivity.show(WidgetActivity.this);
                 }
             }
         });

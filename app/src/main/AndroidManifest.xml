@@ -13,13 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".PopMenuActivity"></activity>
-        <activity android:name=".ExpandableListActivity" />
+        <activity android:name=".ui.ProgressBarActivity"></activity>
+        <activity android:name=".ui.PopMenuActivity" />
+        <activity android:name=".ui.ExpandableListActivity" />
         <activity android:name=".interview.InterviewActivity" />
         <activity android:name=".preference.PreActivity" />
         <activity android:name=".remoteviews.NotifyActivity" />
         <activity
-            android:name=".ViewFlipperActivity"
+            android:name=".ui.ViewFlipperActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".WidgetActivity">
             <intent-filter>
@@ -28,7 +29,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".StackViewActivity" />
+        <activity android:name=".ui.StackViewActivity" />
 
         <receiver android:name=".remoteviews.provider.MyAppWidgetProvider">
             <intent-filter>
