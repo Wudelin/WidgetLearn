@@ -19,6 +19,7 @@ import android.widget.SimpleAdapter;
 
 import com.wdl.widgetlearn.preference.PreActivity;
 import com.wdl.widgetlearn.remoteviews.NotifyActivity;
+import com.wdl.widgetlearn.ui.CommonlyActivity;
 import com.wdl.widgetlearn.ui.ExpandableListActivity;
 import com.wdl.widgetlearn.ui.PopMenuActivity;
 import com.wdl.widgetlearn.ui.ProgressBarActivity;
@@ -44,7 +45,8 @@ public class WidgetActivity extends AppCompatActivity
             "PreferenceFragment",
             "ExpandableList",
             "PopMenu",
-            "ProgressBar"
+            "ProgressBar",
+            "CompoundButton"
     };
 
     @Override
@@ -101,6 +103,9 @@ public class WidgetActivity extends AppCompatActivity
                 } else if (position == 7)
                 {
                     ProgressBarActivity.show(WidgetActivity.this);
+                }else if (position == 8)
+                {
+                    CommonlyActivity.show(WidgetActivity.this);
                 }
             }
         });
