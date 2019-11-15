@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Gallery;
+import android.widget.ImageSwitcher;
 
 import com.wdl.widgetlearn.R;
 import com.wdl.widgetlearn.adapter.ImageAdapter;
@@ -19,6 +20,7 @@ public class GalleryActivity extends AppCompatActivity
             R.drawable.webp_2,
             R.drawable.webp_3
     };
+    private ImageSwitcher is;
 
     public static void show(Context context)
     {
@@ -31,9 +33,11 @@ public class GalleryActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
         mGallery = findViewById(R.id.gallery);
-        ImageAdapter adapter = new ImageAdapter();
+        is = findViewById(R.id.is);
+
+        ImageAdapter adapter = new ImageAdapter(is,this);
         adapter.setRes(resIds);
         mGallery.setAdapter(adapter);
-
+        mGallery.setOnItemSelectedListener(adapter);
     }
 }
