@@ -13,6 +13,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Gallery;
 import android.widget.ListView;
 import android.widget.RemoteViews;
 import android.widget.SimpleAdapter;
@@ -21,6 +22,7 @@ import com.wdl.widgetlearn.preference.PreActivity;
 import com.wdl.widgetlearn.remoteviews.NotifyActivity;
 import com.wdl.widgetlearn.ui.CommonlyActivity;
 import com.wdl.widgetlearn.ui.ExpandableListActivity;
+import com.wdl.widgetlearn.ui.GalleryActivity;
 import com.wdl.widgetlearn.ui.PopMenuActivity;
 import com.wdl.widgetlearn.ui.ProgressBarActivity;
 import com.wdl.widgetlearn.ui.StackViewActivity;
@@ -46,7 +48,8 @@ public class WidgetActivity extends AppCompatActivity
             "ExpandableList",
             "PopMenu",
             "ProgressBar",
-            "CompoundButton"
+            "CompoundButton",
+            "Gallery"
     };
 
     @Override
@@ -106,6 +109,9 @@ public class WidgetActivity extends AppCompatActivity
                 }else if (position == 8)
                 {
                     CommonlyActivity.show(WidgetActivity.this);
+                }else if (position == 9)
+                {
+                    GalleryActivity.show(WidgetActivity.this);
                 }
             }
         });

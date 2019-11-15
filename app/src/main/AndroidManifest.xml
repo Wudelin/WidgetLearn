@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ui.CommonlyActivity"></activity>
+        <activity android:name=".ui.GalleryActivity"></activity>
+        <activity android:name=".ui.CommonlyActivity" />
         <activity android:name=".ui.ProgressBarActivity" />
         <activity android:name=".ui.PopMenuActivity" />
         <activity android:name=".ui.ExpandableListActivity" />
