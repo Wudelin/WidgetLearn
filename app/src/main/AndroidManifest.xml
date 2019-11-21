@@ -13,7 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ui.GalleryActivity"></activity>
+        <activity
+            android:name=".ui.MDActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".ui.MdCoordinatorActivity" />
+        <activity
+            android:name=".ui.MdToolbarActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".ui.GalleryActivity" />
         <activity android:name=".ui.CommonlyActivity" />
         <activity android:name=".ui.ProgressBarActivity" />
         <activity android:name=".ui.PopMenuActivity" />

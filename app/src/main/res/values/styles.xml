@@ -8,4 +8,19 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ToolbarTheme" parent="Theme.AppCompat.Light">
+        <!-- 设置 toolbar 溢出菜单的文字的颜色 -->
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+        <!-- 设置 toolbar 溢出菜单的文字的大小 -->
+        <item name="android:textSize">20sp</item>
+        <!-- 设置toolbar上显示的menu的字体颜色 -->
+        <item name="actionMenuTextColor">@android:color/white</item>
+    </style>
+
+    <!--  -->
+    <style name="TextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
 </resources>

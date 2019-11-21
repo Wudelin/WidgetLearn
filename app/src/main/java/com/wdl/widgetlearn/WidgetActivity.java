@@ -23,6 +23,9 @@ import com.wdl.widgetlearn.remoteviews.NotifyActivity;
 import com.wdl.widgetlearn.ui.CommonlyActivity;
 import com.wdl.widgetlearn.ui.ExpandableListActivity;
 import com.wdl.widgetlearn.ui.GalleryActivity;
+import com.wdl.widgetlearn.ui.MDActivity;
+import com.wdl.widgetlearn.ui.MdCoordinatorActivity;
+import com.wdl.widgetlearn.ui.MdToolbarActivity;
 import com.wdl.widgetlearn.ui.PopMenuActivity;
 import com.wdl.widgetlearn.ui.ProgressBarActivity;
 import com.wdl.widgetlearn.ui.StackViewActivity;
@@ -49,7 +52,10 @@ public class WidgetActivity extends AppCompatActivity
             "PopMenu",
             "ProgressBar",
             "CompoundButton",
-            "Gallery"
+            "Gallery",
+            "Toolbar",
+            "CoordinatorLayout",
+            "MD"
     };
 
     @Override
@@ -93,7 +99,7 @@ public class WidgetActivity extends AppCompatActivity
                     remoteViewsNotify();
                 } else if (position == 3)
                 {
-                    // ViewFlipperActivity.show(WidgetActivity.this);
+                    ViewFlipperActivity.show(WidgetActivity.this);
                 } else if (position == 4)
                 {
                     PreActivity.show(WidgetActivity.this);
@@ -106,12 +112,22 @@ public class WidgetActivity extends AppCompatActivity
                 } else if (position == 7)
                 {
                     ProgressBarActivity.show(WidgetActivity.this);
-                }else if (position == 8)
+                } else if (position == 8)
                 {
                     CommonlyActivity.show(WidgetActivity.this);
-                }else if (position == 9)
+                } else if (position == 9)
                 {
                     GalleryActivity.show(WidgetActivity.this);
+                } else if (position == 10)
+                {
+                    MdToolbarActivity.show(WidgetActivity.this);
+                } else if (position == 11)
+                {
+                    MdCoordinatorActivity.show(WidgetActivity.this);
+                }
+                else if (position == 12)
+                {
+                    MDActivity.show(WidgetActivity.this);
                 }
             }
         });

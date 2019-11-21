@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/next"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="@string/next" />
+        android:title="@string/next"
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/add"
         android:icon="@drawable/ic_launcher_background"
-        android:title="@string/add" />
+        android:title="@string/add"
+        app:showAsAction="never" />
     <item
-        android:icon="@drawable/ic_launcher_background"
         android:id="@+id/add_queue"
-        android:title="@string/add_queue" />
+        android:icon="@drawable/ic_launcher_background"
+        android:title="@string/add_queue"
+        app:showAsAction="never" />
 </menu>
