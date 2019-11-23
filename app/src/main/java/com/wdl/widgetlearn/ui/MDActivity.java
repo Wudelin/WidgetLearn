@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.appbar.AppBarLayout;
+import com.gyf.immersionbar.ImmersionBar;
 import com.wdl.widgetlearn.R;
 
 /**
@@ -61,6 +62,8 @@ public class MDActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_md);
+        //StatusBarUtil.setTranslucent(this);
+        ImmersionBar.with(this).transparentStatusBar();
         mBar = findViewById(R.id.appbar);
 
         // 滚动状态监听
@@ -73,8 +76,6 @@ public class MDActivity extends AppCompatActivity
                 appBarLayout.getTotalScrollRange();
 
                 // verticalOffset 已经滑动距离
-
-
 
 
 

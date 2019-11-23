@@ -13,9 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".ui.ViewStubActivity"></activity>
         <activity
             android:name=".ui.MDActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/AppBaseTheme" />
         <activity android:name=".ui.MdCoordinatorActivity" />
         <activity
             android:name=".ui.MdToolbarActivity"

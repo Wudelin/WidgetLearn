@@ -30,6 +30,7 @@ import com.wdl.widgetlearn.ui.PopMenuActivity;
 import com.wdl.widgetlearn.ui.ProgressBarActivity;
 import com.wdl.widgetlearn.ui.StackViewActivity;
 import com.wdl.widgetlearn.ui.ViewFlipperActivity;
+import com.wdl.widgetlearn.ui.ViewStubActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,7 +56,8 @@ public class WidgetActivity extends AppCompatActivity
             "Gallery",
             "Toolbar",
             "CoordinatorLayout",
-            "MD"
+            "MD",
+            "ViewStub"
     };
 
     @Override
@@ -128,6 +130,9 @@ public class WidgetActivity extends AppCompatActivity
                 else if (position == 12)
                 {
                     MDActivity.show(WidgetActivity.this);
+                }else if (position == 13)
+                {
+                    ViewStubActivity.show(WidgetActivity.this);
                 }
             }
         });
