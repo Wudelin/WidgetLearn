@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.database.DataSetObserver;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListAdapter;
@@ -16,6 +17,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
+
+import com.wdl.widgetlearn.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -150,6 +153,26 @@ public class FireMissilesDialogFragment extends DialogFragment
                 });
 
         // 可通过 setView 设置自定义布局
+//        LayoutInflater inflater = requireActivity().getLayoutInflater();
+//        AlertDialog.Builder builder = new AlertDialog.Builder(Objects.requireNonNull(getActivity()));
+//        builder
+//                .setCancelable(true)
+//                .setView(inflater.inflate(R.layout.vs_layout, null))
+//                .setNegativeButton("取消", new DialogInterface.OnClickListener()
+//                {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which)
+//                    {
+//                        dialog.cancel();
+//                    }
+//                })
+//                .setPositiveButton("确认", new DialogInterface.OnClickListener()
+//                {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which)
+//                    {
+//                    }
+//                });
 
         return builder.create();
     }
