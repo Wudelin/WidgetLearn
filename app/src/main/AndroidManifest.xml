@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ui.ViewStubActivity"></activity>
+        <activity android:name=".ui.DialogActivity"></activity>
+        <activity android:name=".ui.ViewStubActivity" />
         <activity
             android:name=".ui.MDActivity"
             android:theme="@style/AppBaseTheme" />

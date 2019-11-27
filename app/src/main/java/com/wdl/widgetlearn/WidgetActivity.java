@@ -21,6 +21,7 @@ import android.widget.SimpleAdapter;
 import com.wdl.widgetlearn.preference.PreActivity;
 import com.wdl.widgetlearn.remoteviews.NotifyActivity;
 import com.wdl.widgetlearn.ui.CommonlyActivity;
+import com.wdl.widgetlearn.ui.DialogActivity;
 import com.wdl.widgetlearn.ui.ExpandableListActivity;
 import com.wdl.widgetlearn.ui.GalleryActivity;
 import com.wdl.widgetlearn.ui.MDActivity;
@@ -57,7 +58,8 @@ public class WidgetActivity extends AppCompatActivity
             "Toolbar",
             "CoordinatorLayout",
             "MD",
-            "ViewStub"
+            "ViewStub",
+            "DialogFragment配合Dialog"
     };
 
     @Override
@@ -133,6 +135,9 @@ public class WidgetActivity extends AppCompatActivity
                 }else if (position == 13)
                 {
                     ViewStubActivity.show(WidgetActivity.this);
+                }else if (position == 14)
+                {
+                    DialogActivity.show(WidgetActivity.this);
                 }
             }
         });
