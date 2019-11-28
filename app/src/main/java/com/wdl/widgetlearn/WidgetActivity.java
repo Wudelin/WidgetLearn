@@ -27,6 +27,7 @@ import com.wdl.widgetlearn.ui.GalleryActivity;
 import com.wdl.widgetlearn.ui.MDActivity;
 import com.wdl.widgetlearn.ui.MdCoordinatorActivity;
 import com.wdl.widgetlearn.ui.MdToolbarActivity;
+import com.wdl.widgetlearn.ui.NotifyCationActivity;
 import com.wdl.widgetlearn.ui.PopMenuActivity;
 import com.wdl.widgetlearn.ui.ProgressBarActivity;
 import com.wdl.widgetlearn.ui.StackViewActivity;
@@ -59,7 +60,8 @@ public class WidgetActivity extends AppCompatActivity
             "CoordinatorLayout",
             "MD",
             "ViewStub",
-            "DialogFragment配合Dialog"
+            "DialogFragment配合Dialog",
+            "NotifyCation相关"
     };
 
     @Override
@@ -138,6 +140,9 @@ public class WidgetActivity extends AppCompatActivity
                 }else if (position == 14)
                 {
                     DialogActivity.show(WidgetActivity.this);
+                }else if (position == 15)
+                {
+                    NotifyCationActivity.show(WidgetActivity.this);
                 }
             }
         });
@@ -157,6 +162,7 @@ public class WidgetActivity extends AppCompatActivity
     {
         // 指定intent
         Intent intent = new Intent(this, NotifyActivity.class);
+        intent.putExtra("extra","remoteViewsNotify");
         // 相当于startActivity（intent）
         PendingIntent pi = PendingIntent.getActivity(this, 0x01, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
