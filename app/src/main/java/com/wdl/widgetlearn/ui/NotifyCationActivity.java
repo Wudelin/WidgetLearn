@@ -16,6 +16,14 @@ import android.view.View;
 import com.wdl.widgetlearn.R;
 import com.wdl.widgetlearn.remoteviews.NotifyActivity;
 
+/**
+ * 通知
+ * 1. 获取NotificationManagerCompat
+ * 2. 判断api判断是否要创建NotificationChannel
+ * 3. NotificationManagerCompat.createNotificationChannel(channel)
+ * 4. 创建NotificationCompat
+ * 5. NotificationManagerCompat.notify(id,notifyCation)
+ */
 public class NotifyCationActivity extends AppCompatActivity
 {
 
@@ -38,16 +46,16 @@ public class NotifyCationActivity extends AppCompatActivity
 
         // 添加点击事件-跳转等
         Intent intent = new Intent(this, NotifyActivity.class);
-        intent.putExtra("extra","contentIntent");
+        intent.putExtra("extra", "contentIntent");
         PendingIntent pi = PendingIntent.getActivity(this, 0x01, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         // 添加按钮并添加intent
         Intent intent2 = new Intent(this, NotifyActivity.class);
-        intent2.putExtra("extra","action");
+        intent2.putExtra("extra", "action");
         PendingIntent action = PendingIntent.getActivity(this, 0x02, intent2, PendingIntent.FLAG_UPDATE_CURRENT);
 
         // 发送
-        getManager().notify(0x02, getNotifyCation(pi,action).build());
+        getManager().notify(0x02, getNotifyCation(pi, action).build());
     }
 
     /**
@@ -91,9 +99,9 @@ public class NotifyCationActivity extends AppCompatActivity
                 // 添加点击意图
                 .setContentIntent(pi)
                 // 添加按钮 action
-                .addAction(R.drawable.ic_arrow_back_black_24dp,"Action",action)
+                .addAction(R.drawable.ic_arrow_back_black_24dp, "Action", action)
                 .setAutoCancel(true)
-                .setProgress(100,10,false)
+                .setProgress(100, 10, false)
                 .setStyle(new NotificationCompat.BigTextStyle().bigText("Much longer text that cannot fit one line... " +
                         "Much longer text that cannot fit one line..."));
         return builder;
