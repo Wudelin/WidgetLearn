@@ -1,14 +1,20 @@
 package com.wdl.widgetlearn;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.pm.ShortcutInfo;
+import android.content.pm.ShortcutManager;
 import android.graphics.Color;
+import android.graphics.drawable.Icon;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -35,6 +41,7 @@ import com.wdl.widgetlearn.ui.ViewFlipperActivity;
 import com.wdl.widgetlearn.ui.ViewStubActivity;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -64,11 +71,40 @@ public class WidgetActivity extends AppCompatActivity
             "NotifyCation相关"
     };
 
+    @SuppressLint("NewApi")
+    @RequiresApi(api = Build.VERSION_CODES.N_MR1)
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_widget);
+
+        // API 25以上
+        // 动态添加shortcut 动态删除 等 https://developer.android.google.cn/reference/android/content/pm/ShortcutManager.html
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.baidu.com"));
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        ShortcutManager sm = (ShortcutManager) getSystemService(SHORTCUT_SERVICE);
+        final ShortcutInfo in = new ShortcutInfo.Builder(this, "id1").setShortLabel("Short").setLongLabel("Long").setIcon(
+                Icon.createWithResource(this, R.drawable.ic_arrow_back_black_24dp)
+        ).setIntent(intent).build();
+        assert sm != null;
+        // 添加
+        sm.addDynamicShortcuts(Collections.singletonList(in));
+
+
+        // API 26及以上
+        //固定方式添加快捷
+        // 1.判断是否支持固定快捷
+        if (sm.isRequestPinShortcutSupported()){
+            // 2.创建ShortcutInfo a:ID已存在直接查找创建 b:不存在创建新的
+            final ShortcutInfo inw = new ShortcutInfo.Builder(this, "id1").build();
+            final Intent pi = sm.createShortcutResultIntent(inw);
+            // 3.通过广播判断创建是否完成
+            PendingIntent p = PendingIntent.getBroadcast(this,0,pi,0);
+            sm.requestPinShortcut(inw,p.getIntentSender());
+        }
+
+
         listView = findViewById(R.id.lv);
 
         List<Map<String, String>> mapList = new ArrayList<>();
@@ -130,17 +166,16 @@ public class WidgetActivity extends AppCompatActivity
                 } else if (position == 11)
                 {
                     MdCoordinatorActivity.show(WidgetActivity.this);
-                }
-                else if (position == 12)
+                } else if (position == 12)
                 {
                     MDActivity.show(WidgetActivity.this);
-                }else if (position == 13)
+                } else if (position == 13)
                 {
                     ViewStubActivity.show(WidgetActivity.this);
-                }else if (position == 14)
+                } else if (position == 14)
                 {
                     DialogActivity.show(WidgetActivity.this);
-                }else if (position == 15)
+                } else if (position == 15)
                 {
                     NotifyCationActivity.show(WidgetActivity.this);
                 }
@@ -162,7 +197,7 @@ public class WidgetActivity extends AppCompatActivity
     {
         // 指定intent
         Intent intent = new Intent(this, NotifyActivity.class);
-        intent.putExtra("extra","remoteViewsNotify");
+        intent.putExtra("extra", "remoteViewsNotify");
         // 相当于startActivity（intent）
         PendingIntent pi = PendingIntent.getActivity(this, 0x01, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 

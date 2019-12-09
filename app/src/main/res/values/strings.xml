@@ -3,4 +3,7 @@
     <string name="next">下一首播放</string>
     <string name="add">添加到歌单</string>
     <string name="add_queue">添加到播放队列</string>
+    <string name="static_disabled_message">static_disabled_message</string>
+    <string name="static_shortcut_long_label">static_shortcut_long_label</string>
+    <string name="static_shortcut_short_label">static_shortcut_short_label</string>
 </resources>
