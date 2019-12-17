@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import com.wdl.widgetlearn.R;
 import com.wdl.widgetlearn.remoteviews.NotifyActivity;
@@ -27,6 +28,7 @@ import com.wdl.widgetlearn.remoteviews.NotifyActivity;
 public class NotifyCationActivity extends AppCompatActivity
 {
 
+    private Button mBtn2;
     public static void show(Context context)
     {
         context.startActivity(new Intent(context, NotifyCationActivity.class));
@@ -37,7 +39,7 @@ public class NotifyCationActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notify_cation);
-
+        mBtn2 = findViewById(R.id.button2);
     }
 
     public void sendNotify(View view)

@@ -39,6 +39,7 @@ import com.wdl.widgetlearn.ui.ProgressBarActivity;
 import com.wdl.widgetlearn.ui.StackViewActivity;
 import com.wdl.widgetlearn.ui.ViewFlipperActivity;
 import com.wdl.widgetlearn.ui.ViewStubActivity;
+import com.wdl.widgetlearn.ui.Vp2Activity;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -68,7 +69,8 @@ public class WidgetActivity extends AppCompatActivity
             "MD",
             "ViewStub",
             "DialogFragment配合Dialog",
-            "NotifyCation相关"
+            "NotifyCation相关",
+            "Viewpager2"
     };
 
     @SuppressLint("NewApi")
@@ -91,9 +93,8 @@ public class WidgetActivity extends AppCompatActivity
         // 添加
         sm.addDynamicShortcuts(Collections.singletonList(in));
 
-
         // API 26及以上
-        //固定方式添加快捷
+        // 固定方式添加快捷
         // 1.判断是否支持固定快捷
         if (sm.isRequestPinShortcutSupported()){
             // 2.创建ShortcutInfo a:ID已存在直接查找创建 b:不存在创建新的
@@ -178,6 +179,9 @@ public class WidgetActivity extends AppCompatActivity
                 } else if (position == 15)
                 {
                     NotifyCationActivity.show(WidgetActivity.this);
+                } else if (position == 16)
+                {
+                    Vp2Activity.show(WidgetActivity.this);
                 }
             }
         });
